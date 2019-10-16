@@ -23,7 +23,7 @@ const Container = styled(Flex)`
 `;
 const IconWrapper = styled(Box)`
     flex: 0 0 150px;
-    height: 85px;
+    margin-right: 6px;
     overflow: hidden;
 `;
 const Title = styled.h3`
@@ -32,6 +32,9 @@ const Title = styled.h3`
 const Descriptions = styled.p`
     color: #7a7a7a;
 `;
+const MyBlock = styled(Box)`
+    overflow: hidden;
+`
 
 const Card = ({item, action, size}) => {
     const image = item.snippet.thumbnails.default.url;
@@ -42,10 +45,10 @@ const Card = ({item, action, size}) => {
             <IconWrapper>
                 <Icon image={image}/>
             </IconWrapper>
-            <Box flex="1 1 400px">
+            <MyBlock flex="1 1 400px">
                 <Title>{title}</Title>
                 <Descriptions>{descriptions}</Descriptions>
-            </Box>
+            </MyBlock>
         </Container>
     );
 }
