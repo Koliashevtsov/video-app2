@@ -13,7 +13,8 @@ const reducer = (state, action) => {
         return {
             title: null,
             videos: [],
-            selectedVideo: null
+            selectedVideo: null,
+            listUserPlaylists: []
         };
     }
 

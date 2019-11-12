@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 import styled from 'styled-components';
 import { Flex, Box } from 'rebass';
 
@@ -9,6 +8,14 @@ const Icon = styled.img.attrs((props) => ({
 }))`
     display: inline-block;
     width: 100%;
+    height: 100%;
+`;
+const IconWrapper = styled(Box)`
+    margin-right: 6px;
+    overflow: hidden;
+`;
+const MetaWrapper = styled(Box)`
+    overflow: hidden;
 `;
 const Container = styled(Flex)`
     width: ${props => props.size.width};
@@ -20,21 +27,24 @@ const Container = styled(Flex)`
         cursor: pointer;
         box-shadow:
     }
-`;
-const IconWrapper = styled(Box)`
-    flex: 0 0 150px;
-    margin-right: 6px;
-    overflow: hidden;
-`;
-const Title = styled.h3`
 
+    ${IconWrapper} {
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: ${props => props.size.width == '650px' ? '150px' : '80px'};
+    }
+    ${MetaWrapper} {
+        flex-grow: 1;
+    }
+`;
+
+const Title = styled.h3`
+    margin-bottom: 12px;
 `;
 const Descriptions = styled.p`
     color: #7a7a7a;
 `;
-const MyBlock = styled(Box)`
-    overflow: hidden;
-`
+
 
 const Card = ({item, action, size}) => {
     const image = item.snippet.thumbnails.default.url;
@@ -45,10 +55,10 @@ const Card = ({item, action, size}) => {
             <IconWrapper>
                 <Icon image={image}/>
             </IconWrapper>
-            <MyBlock flex="1 1 400px">
+            <MetaWrapper>
                 <Title>{title}</Title>
                 <Descriptions>{descriptions}</Descriptions>
-            </MyBlock>
+            </MetaWrapper>
         </Container>
     );
 }

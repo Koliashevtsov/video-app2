@@ -12,7 +12,7 @@ const UserMost = (props) => {
             {topVideos.map((item, index) => {
                 return (
                     <ListItem key={index}>
-                        <Card item={item} size={theme.size.large}/>
+                        <Card item={item} size={theme.size.medium}/>
                     </ListItem>
                 );
             })}

@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
     body {
-        padding: 20px 200px 0 200px;
+        padding: 20px 20px 0 20px;
         line-height: 1;
     }
     ol, ul {
@@ -17,5 +17,9 @@ export const GlobalStyles = createGlobalStyle`
     table {
 	    border-collapse: collapse;
 	    border-spacing: 0;
+    }
+    h1, h2, h3, h4, h5, h6, p {
+        margin: 0;
+        padding 0;
     }
 `
