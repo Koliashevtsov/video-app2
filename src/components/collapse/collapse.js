@@ -1,25 +1,37 @@
 import React, { Component } from 'react';
 
-import { faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import { faAngleDown } from '@fortawesome/free-solid-svg-icons';
 
 import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
 
 import { theme } from '../my-styles';
 
-import ToggleIcon from '../toggle-icon';
+import ToggleIcon from '../icons/toggle-icon';
+
+const BoxWrapper = styled(Box)`
+
+`;
+const ChildrenWrapper = styled(Box)`
+    padding: 5px;
+    padding-left: 20px;
+    min-width: 220px;
+`;
 
 const Title = styled.h3`
     display: block;
     color: ${props => props.theme.panels.color.secondary};
-    font-family: ${props => props.theme.fontFamily.main};
+    font-family: ${props => props.theme.text.fontFamily.main};
     margin-right: auto;
 `;
-const TitleContainer = styled(Flex)`
+const TitleWrapper = styled(Flex)`
     padding: 10px 8px;
+    background-color: ${props => props.theme.panels.backgroundColor.secondary};
+    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.65);
+    border-radius: 3px 3px 3px 3px;
 
-    &:hover {
-        background-color: #c1c1bf;
+    :hover {
+        background-color: #d9d9d7;
         border-left: 3px solid ${props => props.theme.panels.backgroundColor.primary};
         cursor: pointer;
     }
@@ -39,17 +51,21 @@ class Collapse extends Component{
     render(){
         const { playlistName } = this.props.item;
         return (
-            <Box>
-                <TitleContainer onClick={this.togglePanel}>
+            <BoxWrapper>
+                <TitleWrapper onClick={this.togglePanel}>
                     <Title theme={theme}>{playlistName}</Title>
                     <ToggleIcon
                         icon={faAngleDown}
                         open={this.state.open}/>
-                </TitleContainer>
+                </TitleWrapper>
+
                 {this.state.open &&
-                    this.props.children
+                    <ChildrenWrapper>
+                        {this.props.children}
+                    </ChildrenWrapper>
                 }
-            </Box>
+
+            </BoxWrapper>
         );
     }
 }

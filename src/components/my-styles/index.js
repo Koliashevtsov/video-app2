@@ -13,20 +13,34 @@ const sizeCard = {
     }
 }
 
-const textType = {
-    height: "14px"
+const fontSizes = {
+    verySmall: "12px",
+    small: "14px",
 }
-
-const fontsType = {
+const fontFamilys = {
     main: "'Tajawal', sans-serif;",
 }
+const textType = {
+    height: "14px",
+    fontSize: fontSizes,
+    fontFamily: fontFamilys
+}
+
+
 const panelsType = {
     backgroundColor: {
         primary: "#ff5e3a",
-        secondary: "#f2f2ef"
+        secondary: "#f2f2ef",
+
     },
     color: {
         primary: "white",
+        secondary: "#2a314d"
+    }
+}
+const mySymbolsType = {
+    color: {
+        primary: "#ff5e3a",
         secondary: "#2a314d"
     }
 }
@@ -34,8 +48,8 @@ const panelsType = {
 export const theme = {
     size: sizeCard,
     text: textType,
-    fontFamily: fontsType,
-    panels: panelsType
+    panels: panelsType,
+    mySymbols: mySymbolsType
 }
 
 

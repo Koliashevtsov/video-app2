@@ -4,7 +4,7 @@ import styled, { keyframes } from 'styled-components';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import { theme } from '../my-styles';
+import { theme } from '../../my-styles';
 
 const rotate = keyframes`
     from {

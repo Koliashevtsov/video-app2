@@ -7,14 +7,14 @@ import ListUserPlaylists from '../list-user-playlists';
 import { theme } from '../my-styles';
 
 const Text = styled.p`
-    font-family: ${props => props.theme.fontFamily.main};
+    font-family: ${props => props.theme.text.fontFamily.main};
     height: ${props => props.theme.text.heigth};
     background-color: ${props => props.theme.panels.backgroundColor.secondary};
     text-align: center;
     padding: 20px;
 `;
 const Header = styled.h2`
-    font-family: ${props => props.theme.fontFamily.main};
+    font-family: ${props => props.theme.text.fontFamily.main};
     text-align: center;
     background-color: ${props => props.theme.panels.backgroundColor.primary};
     color: ${props => props.theme.panels.color.primary};
@@ -54,11 +54,15 @@ UserPlaylists.defaultProps = {
             listTracks: [
                 {
                     id: 'deded',
-                    title: '50 cent'
+                    title: '50 cent',
+                    channelTitle: 'This is hip-hop',
+                    logo: "https://images.complex.com/complex/images/c_limit,dpr_auto,q_90,w_720/fl_lossy,pg_1/dhherovzgjn2rm1msgbv/50-cent-biggest-beefs-getty-jordan-darville"
                 },
                 {
                     id: 'dwdwe',
-                    title: 'eminem'
+                    title: 'eminem',
+                    channelTitle: 'The best rapper ever for my opinion',
+                    logo: "https://i.ytimg.com/vi/_Yhyp-_hX2s/maxresdefault.jpg"
                 }
             ]
         },
