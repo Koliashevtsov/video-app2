@@ -8,7 +8,7 @@ import { getTitle } from '../../actions';
 class SearchBox extends Component {
 
     state = {
-        title: null
+        title: ''
     }
 
     handleChange = (e) => {
@@ -21,7 +21,7 @@ class SearchBox extends Component {
         e.preventDefault();
         this.props.getTitle(this.state.title);
         this.setState({
-            title: null
+            title: ''
         })
     }
 

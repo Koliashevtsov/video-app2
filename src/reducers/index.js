@@ -6,6 +6,14 @@ const getSelectedVideo = (state, action) => {
     return vid;
 }
 
+const createNewPlaylist = (state, action) => {
+    const newPlaylist = {
+        playlistName: action.payload,
+        listTracks: []
+    }
+    return [...state.listUserPlaylists, newPlaylist]
+}
+
 const reducer = (state, action) => {
     console.log('action.type ===> ', action.type);
     console.log('action.payload ===> ', action.payload);
@@ -33,6 +41,13 @@ const reducer = (state, action) => {
             return {
                 ...state,
                 selectedVideo: getSelectedVideo(state, action)
+            };
+        case 'PLAYLIST_CREATED':
+        // I am going to save my new playlist in array listUserPlaylists
+        // but not as single object
+            return {
+                ...state,
+                listUserPlaylists: createNewPlaylist(state,action)
             };
         default:
             return state;

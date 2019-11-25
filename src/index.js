@@ -14,14 +14,14 @@ import App from './components/app';
 
 import store from './store';
 
-const videolistService = new VideolistService();
+const videolistService = new FakeService();
 
 ReactDOM.render(
     <Provider store={store}>
         <VideostoreServiceProvider value={videolistService}>
             <Router>
                 <App />
-            </Router>    
+            </Router>
         </VideostoreServiceProvider>
     </Provider>,
     document.getElementById('root')

@@ -7,7 +7,7 @@ class UserPlaylistsContainer extends Component {
     render(){
         return (
             <UserPlaylists
-                // listUserPlaylists={this.props.listUserPlaylists}
+                listUserPlaylists={this.props.listUserPlaylists}
                 />
         );
     }

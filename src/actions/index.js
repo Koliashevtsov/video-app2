@@ -32,3 +32,10 @@ export const selectVideo = (id) => {
         payload: id
     };
 }
+
+export const playlistCreated = (name) => {
+    return {
+        type: 'PLAYLIST_CREATED',
+        payload: name
+    };
+}

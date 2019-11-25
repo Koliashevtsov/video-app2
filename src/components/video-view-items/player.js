@@ -1,5 +1,14 @@
 import React, { Fragment } from 'react';
 
+import styled from 'styled-components';
+
+import ButtonAddVideoModal from '../button-add-video-modal';
+
+const Frame = styled.iframe.attrs(props => ({
+    src: props.url
+}))``;
+
+
 const Player = (props) => {
     const { selectedVideo } = props;
     let videoId = '';
@@ -10,9 +19,8 @@ const Player = (props) => {
     const url = `https://www.youtube.com/embed/${videoId}`;
     return (
         <Fragment>
-            <div className="card-iframe">
-                <iframe src={url}></iframe>
-            </div>
+            <Frame url={url}/>
+            <ButtonAddVideoModal/>
         </Fragment>
 
     );

@@ -1,9 +1,16 @@
 import React from 'react';
 
+import styled from 'styled-components';
 import { Flex, Box } from 'rebass'
 
 import { UserMost, Player } from '../video-view-items';
+import PlayerContainer from '../../containers/player-container';
 import UserPlaylistsContainer from '../../containers/user-playlists-container';
+
+
+const StyledBoxUserPlaylist = styled(Box)`
+    ${'' /* box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.65); */}
+`;
 
 const VideoView = (props) => {
     const { selectedVideo } = props;
@@ -13,11 +20,11 @@ const VideoView = (props) => {
                 <UserMost/>
             </Box>
             <Box width={1}>
-                <Player selectedVideo={selectedVideo}/>
+                <PlayerContainer/>
             </Box>
-            <Box width={1/2}>
+            <StyledBoxUserPlaylist width={1/2}>
                 <UserPlaylistsContainer/>
-            </Box>
+            </StyledBoxUserPlaylist>
         </Flex>
     );
 }
