@@ -8,7 +8,6 @@ class PlayerContainer extends Component {
         return (
             <Player
                 selectedVideo={this.props.selectedVideo}
-                addVideoToPlaylist={this.props.addVideoToPlaylist}
             />
         );
     }
@@ -16,11 +15,6 @@ class PlayerContainer extends Component {
 const mapStateToProps = (state) => {
     return {
         selectedVideo: state.selectedVideo
-    };
-}
-const mapDispatchToProps = (dispatch) => {
-    return {
-        addVideoToPlaylist: () => dispatch()
     };
 }
 export default connect(mapStateToProps)(PlayerContainer);

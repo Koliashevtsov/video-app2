@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import { UserPlaylists } from '../../components/video-view-items';
 
+
 class UserPlaylistsContainer extends Component {
     render(){
         return (

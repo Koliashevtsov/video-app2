@@ -30,7 +30,7 @@ const TextBlock = (props) => {
 }
 
 const UserPlaylists = (props) => {
-    const { listUserPlaylists } = props;
+    const { listUserPlaylists, editPlaylistName, deletePlaylist } = props;
 
     return (
         <Fragment>
@@ -41,6 +41,8 @@ const UserPlaylists = (props) => {
                 listUserPlaylists.length == 0 ? <TextBlock/> :
                 <ListUserPlaylists
                     listUserPlaylists={listUserPlaylists}
+                    editPlaylistName={editPlaylistName}
+                    deletePlaylist={deletePlaylist}
                 />
             }
         </Fragment>
@@ -67,7 +69,7 @@ UserPlaylists.defaultProps = {
             ]
         },
         {
-            playlistName: 'Techno',
+            playlistName: 'Technoffffffffff',
             listTracks: [
                 {
                     id: 'ertty',

@@ -4,15 +4,16 @@ import { Box, Flex } from 'rebass';
 import styled from 'styled-components';
 import { theme } from '../my-styles';
 
-import { faPlay, faMinusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faMinusCircle } from '@fortawesome/free-solid-svg-icons';
 
-import PlayIcon from '../icons/play-icon';
-import TrashIcon from '../icons/trash-icon';
+import StaticIcon from '../icons/static-icon';
 
 const Title = styled.p`
     font-size: ${props => props.theme.text.fontSize.small};
     font-family: ${props => props.theme.text.fontFamily.main};
     font-weight: bold;
+
+    margin-bottom: 3px;
 `;
 const Meta = styled.p`
     font-size: ${props => props.theme.text.fontSize.small};
@@ -50,6 +51,12 @@ const Info = styled(Box)`
     flex: 5 0 150px;
     padding-left: 4px;
 
+    ${Title} {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
     ${Meta} {
         white-space: nowrap;
         overflow: hidden;
@@ -73,20 +80,23 @@ const TrashWrapper = styled.span`
 
 
 const TrackItem = (props) => {
-    const { track } = props;
+    const { track, playTrack, deleteTrack } = props;
+    const logo = track.snippet.thumbnails.medium.url;
+    const title = track.snippet.title;
+    const channelTitle = track.snippet.channelTitle;
     return (
         <FlexWrapper>
-            <Flex1>
+            <Flex1 onClick={playTrack}>
                 <ImageWrapper>
-                    <Image logo={track.logo}/>
+                    <Image logo={logo}/>
                 </ImageWrapper>
                 <Info>
-                    <Title>{track.title}</Title>
-                    <Meta>{track.channelTitle}</Meta>
+                    <Title>{title}</Title>
+                    <Meta>{channelTitle}</Meta>
                 </Info>
             </Flex1>
-            <TrashWrapper>
-                <TrashIcon icon={faMinusCircle}/>
+            <TrashWrapper onClick={deleteTrack}>
+                <StaticIcon icon={faMinusCircle}/>
             </TrashWrapper>
         </FlexWrapper>
     );

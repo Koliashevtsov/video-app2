@@ -1,25 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { TitleInListModal } from '../my-styles';
+import AddVideoToPlaylistContainer from '../../containers/add-video-to-playlist-container';
 
 const List = styled.ul`
-    border-top: 1px solid ${props => props.theme.panels.borderColor.primary}
+    border-width: 1px;
+    border-style: solid;
+    border-image: linear-gradient(
+        to right,
+        #f2f2ef,
+        ${props => props.theme.panels.borderColor.primary},
+        #f2f2ef
+        ) 0.5;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
 `;
 const ListItem = styled.li`
 
 `;
 
-const InModalPlaylists = ({ list }) => {
+const InModalPlaylists = ({ list, toggleClose }) => {
     return (
-        <List>
+        <List onClick={toggleClose}>
             {
                 list.map((item, index) => {
                     return (
                         <ListItem key={index}>
-                            <TitleInListModal>
-                                {item.playlistName}
-                            </TitleInListModal>
+                            {/* я так зрозумів, що item не потрібно сюди передавати
+                            його будемо брати із match  */}
+                            <AddVideoToPlaylistContainer item={item}/>
                         </ListItem>
                     )
                 })

@@ -7,7 +7,9 @@ class InModalPlaylistsContainer extends Component {
 
     render(){
         return (
-            <InModalPlaylists list={this.props.listUserPlaylists}/>
+            <InModalPlaylists
+                list={this.props.listUserPlaylists}
+                toggleClose={this.props.toggleClose}/>
         );
     }
 }

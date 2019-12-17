@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 
 import styled from 'styled-components';
 
-import ButtonAddVideoModal from '../button-add-video-modal';
+import AddVideoComponent from '../add-video-component';
 
 const Frame = styled.iframe.attrs(props => ({
     src: props.url
@@ -20,7 +20,7 @@ const Player = (props) => {
     return (
         <Fragment>
             <Frame url={url}/>
-            <ButtonAddVideoModal/>
+            <AddVideoComponent/>
         </Fragment>
 
     );

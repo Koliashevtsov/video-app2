@@ -28,7 +28,8 @@ const ListUserPlaylists = (props) => {
                     listUserPlaylists.map((item, index) => {
                         return (
                             <ListItem key={index}>
-                                <UserPlaylistsItem item={item}/>
+                                <UserPlaylistsItem
+                                    item={item}/>
                             </ListItem>
                         );
                     })

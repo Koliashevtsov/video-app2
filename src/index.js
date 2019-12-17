@@ -14,7 +14,7 @@ import App from './components/app';
 
 import store from './store';
 
-const videolistService = new FakeService();
+const videolistService = new VideolistService();
 
 ReactDOM.render(
     <Provider store={store}>

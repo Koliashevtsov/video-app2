@@ -1,11 +1,9 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-const PlayIcon = ({ icon }) => {
+const StaticIcon = ({ icon }) => {
     return (
         <FontAwesomeIcon icon={icon}/>
     );
 }
-
-export default PlayIcon;
+export default StaticIcon;

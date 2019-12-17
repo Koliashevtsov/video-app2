@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import { Route } from 'react-router-dom';
 import styled from 'styled-components';
-import { ModalProvider } from 'styled-react-modal';
+import { ModalProvider, BaseModalBackground } from 'styled-react-modal';
 
 import SearchBox from '../search-box';
 import VideoListContainer from '../../containers/video-list-container';
@@ -14,15 +14,15 @@ import { ThemeProvider } from 'styled-components';
 
 import { theme } from '../my-styles';
 
-const SpecialModalBackground = styled.div`
-
+const SpecialModalBackground = styled(BaseModalBackground)`
+    background-color: rgba(0, 0, 0, ${props => props.backgroundOpacity});
 `;
 
 class App extends Component {
     render(){
         return (
             <ThemeProvider theme={theme}>
-                <ModalProvider >
+                <ModalProvider backgroundComponent={SpecialModalBackground}>
                     <Box>
                         <GlobalStyles/>
                         <Route

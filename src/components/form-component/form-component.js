@@ -1,9 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 import styled from 'styled-components';
+
 import { Flex, Box } from 'rebass';
 
-import { playlistCreated } from '../../actions';
 const Form = styled.form`
 
 `;
@@ -71,48 +70,20 @@ const Submit = styled.button`
     }
 `;
 
-class FormNewPlaylist extends Component {
-    state = {
-        term: ''
-    }
-
-    changeTerm = (e) => {
-        this.setState({
-            term: e.target.value
-        })
-    }
-
-    handleTerm = (e) => {
-        e.preventDefault();
-        this.props.createNewPlaylist(this.state.term);
-        this.setState({
-            term: ''
-        });
-        this.props.toggleModal();
-    }
-
-    render(){
-        return (
-            <Form onSubmit={this.handleTerm}>
-                <FlexWrapper>
-                    <Label>Please, enter playlist name</Label>
-                    <Flex>
-                        <Input
-                            value={this.state.term}
-                            onChange={this.changeTerm}/>
-                        <Submit>OK</Submit>
-                    </Flex>
-                </FlexWrapper>
-            </Form>
-        );
-    }
+const FormComponent = (props) => {
+    const { forSubmit, forValue, forChange } = props;
+    return (
+        <Form onSubmit={forSubmit}>
+            <FlexWrapper>
+                <Label>Please, enter playlist name</Label>
+                <Flex>
+                    <Input
+                        value={forValue}
+                        onChange={forChange}/>
+                    <Submit>OK</Submit>
+                </Flex>
+            </FlexWrapper>
+        </Form>
+    );
 }
-
-const mapDispatchToProps = (dispatch) => {
-    return {
-        createNewPlaylist: (term) => {
-            dispatch(playlistCreated(term))
-        }
-    };
-}
-export default connect(null, mapDispatchToProps)(FormNewPlaylist);
+export default FormComponent;

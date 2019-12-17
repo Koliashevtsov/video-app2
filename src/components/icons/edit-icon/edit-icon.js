@@ -1,11 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import { faEdit } from '@fortawesome/free-solid-svg-icons';
 
 import StaticIcon from '../static-icon';
 
-const TrashIconStyled = styled.span`
+const EditIconStyled = styled.span`
     margin-right: 3px;
     font-size: 10px;
 
@@ -15,11 +15,11 @@ const TrashIconStyled = styled.span`
     }
 `;
 
-const TrashIcon = ({ deletePlaylist }) => {
+const EditIcon = ({ toggleModal }) => {
     return (
-        <TrashIconStyled onClick={deletePlaylist}>
-            <StaticIcon icon={faTrash}/>
-        </TrashIconStyled>
+        <EditIconStyled onClick={toggleModal}>
+            <StaticIcon icon={faEdit}/>
+        </EditIconStyled>
     );
 }
-export default TrashIcon;
+export default EditIcon
