@@ -1,17 +1,25 @@
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, applyMiddleware, compose } from 'redux';
 import thunkMiddleware from 'redux-thunk';
-import createLocalStorage from 'redux-local-storage';
 
-import reducer from './reducers';
+import persistState, {mergePersistedState} from 'redux-localstorage';
+import adapter from 'redux-localstorage/lib/adapters/localStorage';
+import filter from 'redux-localstorage-filter';
 
-// const store = createStore(reducer, applyMiddleware(thunkMiddleware));
-const localStorageMiddleware = createLocalStorage();
+import { reducer } from './reducers';
 
-const createStoreWithMiddleware = applyMiddleware(
-    thunkMiddleware,
-    localStorageMiddleware
-)(createStore);
+const reducerApp = compose(
+    mergePersistedState()
+)(reducer);
 
-const store = createStoreWithMiddleware(reducer);
+const storage = compose(
+    filter('nested.key')
+)(adapter(window.localStorage));
+
+const enhancer = compose(
+  /* applyMiddleware(...middlewares) */
+  persistState(storage, 'my-storage-key')
+);
+
+const store = createStore(reducerApp, applyMiddleware(thunkMiddleware));
 
 export default store;

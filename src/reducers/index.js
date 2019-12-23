@@ -94,7 +94,7 @@ const deleteVideoFromPlaylist = (state, action) => {
 
 }
 
-const reducer = (state, action) => {
+export const reducer = (state, action) => {
     console.log('action.type ===> ', action.type);
     console.log('action.payload ===> ', action.payload);
     if(state === undefined){
@@ -111,7 +111,6 @@ const reducer = (state, action) => {
             ]
         };
     }
-
     switch (action.type) {
         case 'GET_TITLE':
             return {
@@ -159,5 +158,3 @@ const reducer = (state, action) => {
             return state;
     }
 }
-
-export default reducer;

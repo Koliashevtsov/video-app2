@@ -1,29 +1,3 @@
-import { LOCAL_GET, LOCAL_SET, LOCAL_REMOVE } from 'redux-local-storage/action_types'
-
-export const getSession = () => ({
-    type: 'LOCAL_GET',
-    key: 'session',
-    request: 'GET_SESSION_REQUEST',
-    success: 'GET_SESSION_SUCCESS',
-    failure: 'GET_SESSION_FAILURE'
-})
-
-export const setSession = (session) => ({
-  type: 'LOCAL_SET',
-  key: 'session',
-  value: session,
-  request: 'SET_SESSION_REQUEST',
-  success: 'SET_SESSION_SUCCESS',
-  failure: 'SET_SESSION_FAILURE'
-})
-
-export const removeSession = () => ({
-  type: 'LOCAL_REMOVE',
-  key: 'session',
-  request: 'REMOVE_SESSION_REQUEST',
-  success: 'REMOVE_SESSION_SUCCESS',
-  failure: 'REMOVE_SESSION_FAILURE'
-})
 
 export const getTitle = (title) => {
     return {
