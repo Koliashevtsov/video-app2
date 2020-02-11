@@ -17,6 +17,7 @@ const Player = (props) => {
     }
 
     const url = `https://www.youtube.com/embed/${videoId}`;
+    console.log(`url currentVideo >>>>>>>>>> ${url}`);
     return (
         <Fragment>
             <Frame url={url}/>

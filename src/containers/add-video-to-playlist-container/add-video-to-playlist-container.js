@@ -22,8 +22,8 @@ const mapStateToProps = (state) => {
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        addVideoToPlaylist: (palylist) => {
-            dispatch(videoAddedToPlaylist(palylist))
+        addVideoToPlaylist: (playlist) => {
+            dispatch(videoAddedToPlaylist(playlist))
         }
     };
 }

@@ -6,6 +6,9 @@ import { withRouter } from 'react-router-dom';
 
 import { selectVideo } from '../../actions';
 import VideoListItem from '../../components/video-list-item';
+import Card from '../../components/card';
+
+import { theme } from '../../components/my-styles';
 
 import { compose } from '../../utils';
 
@@ -14,9 +17,13 @@ class VideoListItemContainer extends Component {
     render(){
         const id = this.props.video.id.videoId;
         return (
-            <VideoListItem
-                video={this.props.video}
-                onSelectVideo={() => this.props.onSelectVideo(id, this.props.history)}/>
+            <VideoListItem>
+                <Card
+                    item={this.props.video}
+                    action={() => this.props.onSelectVideo(id, this.props.history)}
+                    size={theme.size.large}
+                />
+            </VideoListItem>
         );
     }
 }

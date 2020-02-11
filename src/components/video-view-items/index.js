@@ -1,9 +1,9 @@
-import UserMost from './user-most';
+import ListOfSimilars from './list-of-similars';
 import Player from './player';
 import UserPlaylists from './user-playlists';
 
 export {
-    UserMost,
+    ListOfSimilars,
     Player,
     UserPlaylists
 }

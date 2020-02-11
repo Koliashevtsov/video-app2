@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 //use withRouter to have access to history
 import { withRouter } from 'react-router-dom';
 
-import { selectVideo, trackDeleted } from '../../actions';
+import { rewriteSelectedVideo, trackDeleted } from '../../actions';
 
 import TrackItem from '../../components/track-item';
 
@@ -15,17 +15,18 @@ class TrackItemContainer extends Component {
         return (
             <TrackItem
                 track={track}
-                playTrack={() => this.props.playTrack(track, history)}
+                playTrack={() => this.props.playTrack(playlist, track, history)}
                 deleteTrack={() => this.props.deleteTrack(playlist, track)}/>
         );
     }
 }
 const mapDispatchToProps = (dispatch) => {
     return {
-        playTrack: (track, history) => {
+        playTrack: (playlist, track, history) => {
+            const playlistId = playlist.id;
             const trackId = track.id.videoId;
-            dispatch(selectVideo(trackId))
-            history.push(`video-view/${trackId}`);
+            dispatch(rewriteSelectedVideo(playlistId, trackId))
+            history.push(`${trackId}`);
         },
         deleteTrack: (playlist, track) => {
             const playlistId = playlist.id;

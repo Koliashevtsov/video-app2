@@ -1,10 +1,14 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Button } from 'rebass';
+import { Box, Button } from 'rebass';
 
 import ListUserPlaylists from '../list-user-playlists';
 
 import { theme } from '../my-styles';
+
+const BoxWrapper = styled(Box)`
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.31);
+`;
 
 const Text = styled.p`
     font-family: ${props => props.theme.text.fontFamily.main};
@@ -33,7 +37,7 @@ const UserPlaylists = (props) => {
     const { listUserPlaylists, editPlaylistName, deletePlaylist } = props;
 
     return (
-        <Fragment>
+        <BoxWrapper>
             <Header theme={theme}>
                 Playlists
             </Header>
@@ -45,7 +49,7 @@ const UserPlaylists = (props) => {
                     deletePlaylist={deletePlaylist}
                 />
             }
-        </Fragment>
+        </BoxWrapper>
 
     );
 }

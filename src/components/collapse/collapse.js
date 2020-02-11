@@ -26,9 +26,9 @@ const Title = styled.h3`
 `;
 const TitleWrapper = styled(Flex)`
     padding: 10px 8px;
-    background-color: ${props => props.theme.panels.backgroundColor.secondary};
-    box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.65);
-    border-radius: 3px 3px 3px 3px;
+    background-color: ${props => props.theme.panels.backgroundColor.primary2};
+    box-shadow: 1px 2px 5px -1px rgba(0,0,0,0.61);
+    border-radius: 3px;
 
     :hover {
         background-color: #d9d9d7;

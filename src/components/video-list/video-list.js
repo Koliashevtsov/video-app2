@@ -3,6 +3,7 @@ import React, { Fragment } from 'react';
 import styled from 'styled-components';
 
 import VideoListItemContainer from '../../containers/video-list-item-container';
+import Card from '../card';
 
 const List = styled.ul`
     padding: 0 20px;

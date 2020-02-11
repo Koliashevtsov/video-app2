@@ -10,6 +10,8 @@ import VideoList from '../../components/video-list';
 
 import { compose } from '../../utils';
 
+
+// I use this component in two places, in App and in ListOfSimilars
 class VideoListContainer extends Component {
 
     componentDidMount(){

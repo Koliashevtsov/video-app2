@@ -3,6 +3,7 @@ const getSelectedVideo = (state, action) => {
         console.log(item.id.videoId);
         return item.id.videoId === action.payload
     })
+    console.log(`my current video is ${typeof vid}`);
     return vid;
 }
 
@@ -65,6 +66,17 @@ const addVideoToPlaylist = (state, action) => {
         ...list.slice(playlistIdx + 1)
     ];
 }
+
+const rewriteSelectedVideo = (state, action) => {
+    const playlist = state.listUserPlaylists.find(item => {
+        return item.id === action.payload[0];
+    })
+    const video = playlist.listTracks.find(item => {
+        return item.id.videoId === action.payload[1];
+    })
+    return video
+}
+
 const deleteVideoFromPlaylist = (state, action) => {
     const list = state.listUserPlaylists;
     const playlistIdx = action.payload[0];
@@ -102,13 +114,7 @@ export const reducer = (state, action) => {
             title: '',
             videos: [],
             selectedVideo: null,
-            listUserPlaylists: [
-                {
-                    id: 0,
-                    playlistName: 'Something',
-                    listTracks: []
-                }
-            ]
+            listUserPlaylists: []
         };
     }
     switch (action.type) {
@@ -149,6 +155,11 @@ export const reducer = (state, action) => {
                 ...state,
                 listUserPlaylists: addVideoToPlaylist(state, action)
             };
+        case 'SELECTED_VIDEO_REWRITED':
+            return {
+                ...state,
+                selectedVideo: rewriteSelectedVideo(state, action)
+            };
         case 'TRACK_DELETED_SUCCESSFULLY':
             return {
                 ...state,
@@ -158,3 +169,7 @@ export const reducer = (state, action) => {
             return state;
     }
 }
+
+// ок зараз localStorage працює, на даний момент коли я перемикаю
+// трек то у history добавляється знову адреса, а мені потрібно, щоб
+// url змінювався на інший трек

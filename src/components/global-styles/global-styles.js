@@ -4,6 +4,7 @@ export const GlobalStyles = createGlobalStyle`
     body {
         padding: 20px 20px 0 20px;
         line-height: 1;
+        background-color: #F8F8FA;
     }
     ol, ul {
         list-style: none;

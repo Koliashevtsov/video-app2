@@ -11,12 +11,15 @@ const List = styled.ul`
 `;
 const ListItem = styled.li`
     :not(:last-child){
-        margin-bottom: 8px;
+        margin-bottom: 10px;
     }
 `;
 const BoxWrapper = styled(Box)`
-    background-color: ${props => props.theme.panels.backgroundColor.secondary};
-    padding: 8px 8px 8px 8px;
+    background-color: ${props => props.theme.panels.backgroundColor.white};
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 40px;
 `;
 
 const ListUserPlaylists = (props) => {

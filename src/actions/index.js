@@ -27,8 +27,8 @@ export const fetchVideos = (videolistService) => (title) => (dispatch) => {
         .catch((err) => dispatch(videoListError(err)))
 }
 
-// I use this action creator in two containers
-// in TrackItemContainer and in VideoListItemContainer
+
+// VideoListItemContainer
 export const selectVideo = (id) => {
     return {
         type: 'VIDEO_SELECTED',
@@ -61,6 +61,13 @@ export const videoAddedToPlaylist = (playlist) => {
     return {
         type: 'VIDEO_ADDED_TO_PLAYLIST',
         payload: playlist
+    };
+}
+
+export const rewriteSelectedVideo = (playlistId, videoId) => {
+    return {
+        type: 'SELECTED_VIDEO_REWRITED',
+        payload: [playlistId, videoId]
     };
 }
 

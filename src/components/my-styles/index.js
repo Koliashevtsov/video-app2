@@ -31,13 +31,15 @@ const textType = {
 const panelsType = {
     backgroundColor: {
         primary: "#ff5e3a",
+        primary2: "#F7F4F3",
         secondary: "#f2f2ef",
-        secondaryHover: "#d9d9d7"
+        secondaryHover: "#d9d9d7",
+        white: "#FFFFFF"
 
     },
     color: {
         primary: "white",
-        secondary: "#2a314d"
+        secondary: "#FF5E3A"
     },
     borderColor: {
         primary: "#ff5e3a",
