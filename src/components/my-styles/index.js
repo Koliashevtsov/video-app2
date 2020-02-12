@@ -20,6 +20,7 @@ const fontSizes = {
 }
 const fontFamilys = {
     main: "'Tajawal', sans-serif;",
+    youtube: "'Roboto', sans-serif"
 }
 const textType = {
     height: "14px",
@@ -39,7 +40,8 @@ const panelsType = {
     },
     color: {
         primary: "white",
-        secondary: "#FF5E3A"
+        secondary: "#FF5E3A",
+        secondaryBlack: '#0a2342'
     },
     borderColor: {
         primary: "#ff5e3a",
@@ -81,7 +83,7 @@ export const Input = styled.input``;
 export const Title = styled.p``;
 
 export const TitleInListModal = styled.h4`
-    color: ${props => props.theme.panels.color.secondary};
+    color: ${props => props.theme.panels.color.secondaryBlack};
     font-family: ${props => props.theme.text.fontFamily.main};
     padding: 6px 6px;
 

@@ -2,10 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-
 import VideoListContainer from '../../containers/video-list-container';
 
-import { theme, List, ListItem } from '../my-styles';
 
 const ListOfSimilars = (props) => {
     return (

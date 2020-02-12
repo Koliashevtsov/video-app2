@@ -16,6 +16,7 @@ const IconWrapper = styled(Box)`
 `;
 const MetaWrapper = styled(Box)`
     overflow: hidden;
+    font-family: ${props => props.theme.text.fontFamily.youtube};
 `;
 const Container = styled(Flex)`
     width: ${props => props.size.width};
@@ -38,8 +39,11 @@ const Container = styled(Flex)`
     }
 `;
 
-const Title = styled.h3`
+const Title = styled.h4`
     margin-bottom: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 `;
 const Descriptions = styled.p`
     color: #7a7a7a;
@@ -50,6 +54,7 @@ const Card = ({item, action, size}) => {
     const image = item.snippet.thumbnails.default.url;
     const title = item.snippet.title;
     const descriptions = item.snippet.description;
+    const channelTitle = item.snippet.channelTitle;
     return (
         <Container size={size} onClick={action}>
             <IconWrapper>
@@ -57,7 +62,9 @@ const Card = ({item, action, size}) => {
             </IconWrapper>
             <MetaWrapper>
                 <Title>{title}</Title>
-                <Descriptions>{descriptions}</Descriptions>
+                <Descriptions>
+                    {size.width == '650px' ? descriptions : channelTitle}
+                </Descriptions>
             </MetaWrapper>
         </Container>
     );

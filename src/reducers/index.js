@@ -3,7 +3,6 @@ const getSelectedVideo = (state, action) => {
         console.log(item.id.videoId);
         return item.id.videoId === action.payload
     })
-    console.log(`my current video is ${typeof vid}`);
     return vid;
 }
 
@@ -169,7 +168,3 @@ export const reducer = (state, action) => {
             return state;
     }
 }
-
-// ок зараз localStorage працює, на даний момент коли я перемикаю
-// трек то у history добавляється знову адреса, а мені потрібно, щоб
-// url змінювався на інший трек
