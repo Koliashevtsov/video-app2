@@ -35,11 +35,6 @@ export const selectVideo = (id) => {
         payload: id
     };
 }
-export const changeCardSize = () => {
-    return {
-        type: 'CARD_SIZE_CHANGED'
-    };
-}
 
 export const playlistCreated = (name) => {
     return {
@@ -59,8 +54,6 @@ export const playlistDeleted = (id) => {
         payload: id
     };
 }
-
-
 
 export const videoAddedToPlaylist = (playlist) => {
     return {

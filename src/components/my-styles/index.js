@@ -9,7 +9,7 @@ const sizeCard = {
     },
     medium: {
         width: "350px",
-        height: "80px"
+        height: "70px"
     }
 }
 

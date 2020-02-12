@@ -1,13 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
-
+import { Box, Button } from 'rebass';
 
 import VideoListContainer from '../../containers/video-list-container';
 
+import BlockHeader from '../block-header';
+
+const BoxWrapper = styled(Box)`
+    box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.31);
+`;
+const Wrapper = styled(Box)`
+    padding: 15px 20px;
+    background-color: ${props => props.theme.panels.backgroundColor.white};
+`
 
 const ListOfSimilars = (props) => {
     return (
-        <VideoListContainer/>
+        <BoxWrapper>
+            <BlockHeader>
+                Related videos
+            </BlockHeader>
+            <Wrapper>
+                <VideoListContainer/>
+            </Wrapper>
+        </BoxWrapper>
     );
 }
 
