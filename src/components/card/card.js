@@ -23,7 +23,7 @@ const Container = styled(Flex)`
     width: ${props => props.size.width};
     height: ${props => props.size.height};
     padding: 6px;
-    border: 1px solid #d1cdcd;
+    border: 1px solid ${props => props.theme.mySymbols.backgroundColor.secondary};
 
     font-size: ${props => props.size.width === '650px' ? '16px' : '14px'};
 

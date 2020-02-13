@@ -9,15 +9,29 @@ const IconWrapper = styled.span`
     height: 35px;
     line-height: 35px;
     margin-left: 10px;
-    background-color: ${props => props.theme.mySymbols.backgroundColor.secondary};
-    color: ${props => props.theme.mySymbols.color.secondaryOpas};
     border-radius: 50%;
     text-align: center;
+
+    color: ${props => {
+        return props.isPlay ?
+        props.theme.mySymbols.color.primary :
+        props.theme.mySymbols.color.secondaryOpas;
+        }
+    };
+
+    background-color: ${props => {
+        return props.isPlay ?
+        props.theme.mySymbols.backgroundColor.primary :
+        props.theme.mySymbols.backgroundColor.secondary
+        }
+
+    };
 `;
 
 const StatusPlayIcon = (props) => {
+    const { isPlay } = props;
     return (
-        <IconWrapper>
+        <IconWrapper isPlay={isPlay}>
             <FontAwesomeIcon icon={faMusic}/>
         </IconWrapper>
     );

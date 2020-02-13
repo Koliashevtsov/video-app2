@@ -8,7 +8,7 @@ const List = styled.ul`
 `;
 const ListItem = styled.li`
     :not(:last-child):nth-child(1n){
-        margin-bottom: 15px;
+        margin-bottom: 12px;
     }
 `;
 

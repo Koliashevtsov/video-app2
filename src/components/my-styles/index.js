@@ -8,8 +8,8 @@ const sizeCard = {
         height: "120px"
     },
     medium: {
-        width: "300px",
-        height: "75px"
+        width: "250px",
+        height: "65px"
     }
 }
 
@@ -51,9 +51,9 @@ const panelsType = {
 }
 const mySymbolsType = {
     color: {
-        primary: "#ff5e3a",
+        primary: "#FFFFFF",
         secondary: "#0A2342",
-        secondaryOpas: "rgb(10,35,66, 0.5)"
+        secondaryOpas: "rgba(10,35,66, 0.5)"
     },
     backgroundColor: {
         primary: "#ff5e3a",

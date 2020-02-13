@@ -12,7 +12,8 @@ import { compose } from '../../utils';
 class VideoListItemContainer extends Component {
 
     state = {
-        sizeCard: 'large'
+        sizeCard: 'large',
+        isPlay: false
     }
 
     componentDidMount(){
@@ -20,6 +21,24 @@ class VideoListItemContainer extends Component {
         // set appropriate sizeCard
         if(this.props.history.location.pathname.length > 1){
             this.changeCardSize('medium')
+        }
+
+    }
+
+    componentDidUpdate(prevProps){
+        const id = this.props.video.id.videoId; // from component above
+        const idCurrVideo = this.props.currentVideo.id.videoId // from reducer
+
+        if(this.props.currentVideo !== prevProps.currentVideo){
+            if(id === idCurrVideo) {
+                this.setState({
+                    isPlay: true
+                })
+            } else {
+                this.setState({
+                    isPlay: false
+                })
+            }
         }
     }
 
@@ -32,17 +51,24 @@ class VideoListItemContainer extends Component {
 
 
     render(){
-        const id = this.props.video.id.videoId;
         const { video } = this.props
+        const id = video.id.videoId;
         return (
             <VideoListItem
                 video={video}
                 sizeCard={this.state.sizeCard}
+                isPlay={this.state.isPlay}
                 onSelectVideo={() => this.props.onSelectVideo(id, this.props.history)}/>
         );
     }
 }
 
+
+const mapStateToProps = (state) => {
+    return {
+        currentVideo: state.selectedVideo
+    };
+}
 const mapDispatchToProps = (dispatch) => {
     return {
         onSelectVideo: (id, history) => {
@@ -63,6 +89,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export default compose(
-    connect(null, mapDispatchToProps),
+    connect(mapStateToProps, mapDispatchToProps),
     withRouter
 )(VideoListItemContainer);

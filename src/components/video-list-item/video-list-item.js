@@ -11,7 +11,7 @@ const ItemWrapper = styled(Flex)`
 `;
 
 const VideoListItem = (props) => {
-    const { video, sizeCard, onSelectVideo } = props
+    const { video, sizeCard, isPlay, onSelectVideo } = props
     return (
         <ItemWrapper>
             <Card
@@ -19,7 +19,10 @@ const VideoListItem = (props) => {
                 action={onSelectVideo}
                 size={theme.size[sizeCard]}
             />
-            <StatusPlayIcon/>
+            {
+                sizeCard === 'medium' &&
+                <StatusPlayIcon isPlay={isPlay}/>
+            }
         </ItemWrapper>
     );
 }
