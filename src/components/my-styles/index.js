@@ -52,7 +52,12 @@ const panelsType = {
 const mySymbolsType = {
     color: {
         primary: "#ff5e3a",
-        secondary: "#2a314d"
+        secondary: "#0A2342",
+        secondaryOpas: "rgb(10,35,66, 0.5)"
+    },
+    backgroundColor: {
+        primary: "#ff5e3a",
+        secondary: "#F7F4F3"
     }
 }
 const buttonType = {

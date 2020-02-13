@@ -25,7 +25,7 @@ const Container = styled(Flex)`
     padding: 6px;
     border: 1px solid #d1cdcd;
 
-    font-size: ${props => props.size.width == '650px' ? '16px' : '14px'};
+    font-size: ${props => props.size.width === '650px' ? '16px' : '14px'};
 
     :hover {
         cursor: pointer;
@@ -35,7 +35,7 @@ const Container = styled(Flex)`
     ${IconWrapper} {
         flex-grow: 0;
         flex-shrink: 0;
-        flex-basis: ${props => props.size.width == '650px' ? '150px' : '80px'};
+        flex-basis: ${props => props.size.width === '650px' ? '150px' : '80px'};
     }
     ${MetaWrapper} {
         flex-grow: 1;

@@ -10,7 +10,7 @@ const BoxWrapper = styled(Box)`
     box-shadow: 0px 0px 8px 1px rgba(0,0,0,0.31);
 `;
 const Wrapper = styled(Box)`
-    padding: 15px 20px;
+    padding: 15px 10px 15px 20px;
     background-color: ${props => props.theme.panels.backgroundColor.white};
 `
 
