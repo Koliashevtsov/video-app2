@@ -14,7 +14,7 @@ const Wrapper = styled(Box)`
     background-color: ${props => props.theme.panels.backgroundColor.white};
 `
 
-const ListOfSimilars = (props) => {
+const ListOfRelated = (props) => {
     return (
         <BoxWrapper>
             <BlockHeader>
@@ -91,4 +91,4 @@ const ListOfSimilars = (props) => {
 //         },
 //     ]
 // }
-export default ListOfSimilars;
+export default ListOfRelated;

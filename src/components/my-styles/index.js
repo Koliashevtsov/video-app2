@@ -8,8 +8,8 @@ const sizeCard = {
         height: "120px"
     },
     medium: {
-        width: "350px",
-        height: "70px"
+        width: "300px",
+        height: "75px"
     }
 }
 

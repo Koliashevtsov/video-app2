@@ -27,7 +27,7 @@ const Button = styled.button`
         cursor: pointer;
     }
 `;
-const BackPanel = styled(Box)`
+const SidePanel = styled(Box)`
     background-color: ${props => props.theme.panels.backgroundColor.primary}
 `;
 const Main = styled(Box)`
@@ -77,7 +77,7 @@ class AddVideoComponent extends Component {
                     backgroundProps={{backgroundOpacity: this.state.backgroundOpacity}}
                     mousePointX={this.state.mousePointX}
                     mousePointY={this.state.mousePointY}>
-                    <BackPanel width={1/6}></BackPanel>
+                    <SidePanel width={1/6}></SidePanel>
                     <Main width={1}>
                         <ButtonNewPlaylist
                             onClick={this.toggleCreateNew}

@@ -1,9 +1,9 @@
-import ListOfSimilars from './list-of-similars';
+import ListOfRelated from './list-of-related';
 import Player from './player';
 import UserPlaylists from './user-playlists';
 
 export {
-    ListOfSimilars,
+    ListOfRelated,
     Player,
     UserPlaylists
 }
